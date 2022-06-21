@@ -1,0 +1,38 @@
+GET http://localhost:8005/api/v1/members/
+Accept: application/json
+
+###
+POST http://localhost:8005/api/v1/members/
+Content-Type: application/json
+
+{
+  "fullName": "Emi Ngwu",
+  "emailAddress": "entityuniversal@gmail.com",
+  "profileImageURL": "https://image.com/ghse/",
+  "bigCommandId": "e99b8f5d-f03f-4888-abf5-4252ab9cc6a1",
+  "publicName": "entity10",
+  "roles": [
+    2,
+    3
+  ]
+}
+
+###
+PUT http://localhost:8005/api/v1/members/1/
+Content-Type: application/json
+
+{
+  "fullName": "Emi Ngwu",
+  "emailAddress": "entityuniversal@gmail.com",
+  "profileImageURL": "https://image.com/ghse/",
+  "bigCommandId": "e99b8f5d-f03f-4888-abf5-4252ab9cc6a1",
+  "publicName": "entity10",
+  "roles": [
+    2,
+    3
+  ]
+}
+
+###
+DELETE http://localhost:8005/api/v1/members/1/
+Accept: application/json

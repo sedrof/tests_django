@@ -1,0 +1,32 @@
+GET http://localhost:8005/api/v1/community/categories/
+Accept: application/json
+
+###
+GET http://localhost:8005/api/v1/community/categories/getting-started/
+Accept: application/json
+
+###
+POST http://localhost:8005/api/v1/community/categories/
+Content-Type: application/json
+
+{
+  "title": "Getting started",
+  "slug": "getting-started",
+  "description": "",
+  "thumbnailURL": ""
+}
+
+###
+PUT http://localhost:8005/api/v1/community/categories/getting-started/
+Content-Type: application/json
+
+{
+  "title": "Getting started",
+  "slug": "getting-started",
+  "description": "",
+  "thumbnailURL": ""
+}
+
+###
+DELETE http://localhost:8005/api/v1/community/categories/getting-startedd/
+Accept: application/json

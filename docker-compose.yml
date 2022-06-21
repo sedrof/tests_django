@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8005
+    volumes:
+      - .:/helpcenter
+    ports:
+      - 8005:8005
+    env_file:
+      - ./env/.env.dev
+    environment:
+      AUTH_SIGNING_KEY: /run/secrets/AUTH_SIGNING_KEY
+      AUTH_VERIFYING_KEY: /run/secrets/AUTH_VERIFYING_KEY
+    secrets:
+      - AUTH_SIGNING_KEY
+      - AUTH_VERIFYING_KEY
+    depends_on:
+      - helpcenter_postgres
+      - helpcenter_redis
+
+  helpcenter_postgres:
+    image: postgres:13.0-alpine
+    volumes:
+      - helpcenter_postgres_volume:/var/lib/postgresql/data/
+    env_file:
+      - ./env/.env.dev
+
+  helpcenter_redis:
+    image: redis:alpine3.13
+    volumes:
+      - helpcenter_redis_volume:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+secrets:
+   AUTH_SIGNING_KEY:
+     file: ./env/dev_auth_private_key.pem
+   AUTH_VERIFYING_KEY:
+     file: ./env/dev_auth_public_key.pem
+
+volumes:
+  helpcenter_postgres_volume:
+  helpcenter_redis_volume:
+

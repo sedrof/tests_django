@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    command: gunicorn helpcenter.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/helpcenter/static/
+      - media_volume:/helpcenter/media/
+    expose:
+      - 8000
+    env_file:
+      - ./env/.env.dev
+    depends_on:
+      - helpcenter_redis
+
+  helpcenter_postgres:
+    image: postgres:13.0-alpine
+    volumes:
+      - helpcenter_postgres_volume:/var/lib/postgresql/data/
+    env_file:
+      - ./env/.env.dev
+
+  helpcenter_redis:
+    image: redis:alpine3.13
+    volumes:
+      - helpcenter_redis_volume:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/helpcenter/static/
+      - media_volume:/helpcenter/media/
+    ports:
+      - 8000:80
+    depends_on:
+      - web
+    
+volumes:
+  helpcenter_postgres_volume:
+  helpcenter_redis_volume:
+  static_volume:
+  media_volume:

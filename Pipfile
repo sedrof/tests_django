@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipdb = "*"
+
+[packages]
+django = "*"
+psycopg2-binary = "==2.8.4"
+pillow = "*"
+djangorestframework = "*"
+gunicorn = "*"
+pydantic = "*"
+django-redis = "*"
+pytz = "*"
+coverage = "*"
+django-debug-toolbar = "*"
+drf-yasg = "*"
+pyjwt = {extras = ["crypto"], version = "*"}
+
+[requires]
+python_version = "3.9"

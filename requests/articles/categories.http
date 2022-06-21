@@ -1,0 +1,32 @@
+GET http://localhost:8005/api/v1/articles/categories/
+Accept: application/json
+
+###
+GET http://localhost:8005/api/v1/articles/categories/getting-startedd/
+Accept: application/json
+
+###
+POST http://localhost:8005/api/v1/articles/categories/
+Content-Type: application/json
+
+{
+  "title": "Getting started",
+  "slug": "getting-startedd",
+  "app": 3,
+  "language": "en"
+}
+
+###
+PUT http://localhost:8005/api/v1/articles/categories/getting-startedd/
+Content-Type: application/json
+
+{
+  "title": "Getting started",
+  "slug": "getting-startedd",
+  "app": 3,
+  "language": "fr"
+}
+
+###
+DELETE http://localhost:8005/api/v1/articles/categories/getting-startedd/
+Accept: application/json

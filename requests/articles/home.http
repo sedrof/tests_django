@@ -1,0 +1,6 @@
+GET http://localhost:8005/api/v1/home/
+Accept: application/json
+
+###
+GET http://localhost:8005/api/v1/home/?language=en&app=3
+Accept: application/json

@@ -1,0 +1,17 @@
+GET http://localhost:8005/api/v1/articles/topics/
+Accept: application/json
+
+###
+POST http://localhost:8005/api/v1/articles/topics/
+Content-Type: application/json
+
+{
+  "title": "Choosing Your Template",
+  "slug": "choose-your-templatxe",
+  "category": 1,
+  "language": "en"
+}
+
+###
+DELETE http://localhost:8005/api/v1/articles/topics/choose-your-templatxe/
+Accept: application/json

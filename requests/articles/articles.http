@@ -1,0 +1,40 @@
+GET http://localhost:8005/api/v1/articles/
+Accept: application/json
+
+###
+POST http://localhost:8005/api/v1/articles/
+Content-Type: application/json
+
+{
+  "title": "Get Inspired by Stunning BigCommand features",
+  "slug": "get_inspired_by_stunning_BigCommand_features",
+  "content": "&lt;h1 class=&quot;article-content__main-title&quot;&gt;    Wix Stores: Tips for Managing Your Business During COVID-19  &lt;/h1&gt;  &lt;p class=&quot;article-content__page&quot;&gt;    Black lives matter justice; her body her rights boots on the ground    changemaker inspire initiative. Program area because, social    enterprise greenwashing impact incubator rubric preliminary thinking    segmentation. Strengthening infrastructure save the world, optimism    movements greenwashing global. Granular, citizen-centered, justice    equal opportunity co-creation scalable, outcomes innovate.  &lt;/p&gt;  &lt;div class=&quot;article-content_horizontal_line&quot;&gt;&lt;/div&gt;  &lt;h2 class=&quot;article-content__section-title&quot;&gt;    Start from the beginning  &lt;/h2&gt;  &lt;p class=&quot;article-content__page&quot;&gt;    Design thinking; program areas social return on investment scale and    impact effective correlation B-corp inspirational her body her    rights. Empower.  &lt;/p&gt;  &lt;h3 class=&quot;article-content__subsection-title&quot;&gt;    Then go towards the end  &lt;/h3&gt;",
+  "authors": [
+    1
+  ],
+  "tags": [
+    1
+  ],
+  "topic": 1
+}
+
+###
+PUT http://localhost:8005/api/v1/articles/get_inspired_by_stunning_BigCommand_features/
+Content-Type: application/json
+
+{
+  "title": "Get Inspired by Stunning BigCommand features",
+  "slug": "get_inspired_by_stunning_BigCommand_features",
+  "authors": [
+    1
+  ],
+  "tags": [
+    1
+  ],
+  "topic": 1,
+  "content": "&lt;h1 class=&quot;article-content__main-title&quot;&gt;    Wix Stores: Tips for Managing Your Business During COVID-19  &lt;/h1&gt;  &lt;p class=&quot;article-content__page&quot;&gt;    Black lives matter justice; her body her rights boots on the ground    changemaker inspire initiative. Program area because, social    enterprise greenwashing impact incubator rubric preliminary thinking    segmentation. Strengthening infrastructure save the world, optimism    movements greenwashing global. Granular, citizen-centered, justice    equal opportunity co-creation scalable, outcomes innovate.  &lt;/p&gt;  &lt;div class=&quot;article-content_horizontal_line&quot;&gt;&lt;/div&gt;  &lt;h2 class=&quot;article-content__section-title&quot;&gt;    Start from the beginning  &lt;/h2&gt;  &lt;p class=&quot;article-content__page&quot;&gt;    Design thinking; program areas social return on investment scale and    impact effective correlation B-corp inspirational her body her    rights. Empower.  &lt;/p&gt;  &lt;h3 class=&quot;article-content__subsection-title&quot;&gt;    Then go towards the end  &lt;/h3&gt;"
+}
+
+###
+DELETE http://localhost:8005/api/v1/articles/get_inspired_by_stunning_BigCommand_features/
+Content-Type: application/json

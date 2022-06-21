@@ -1,0 +1,26 @@
+GET http://localhost:8005/api/v1/articles/tags/
+Accept: application/json
+
+###
+GET http://localhost:8005/api/v1/articles/tags/1/
+Accept: application/json
+
+###
+POST http://localhost:8005/api/v1/articles/tags/
+Content-Type: application/json
+
+{
+  "name": "digital product"
+}
+
+###
+PUT http://localhost:8005/api/v1/articles/tags/digital%20products/
+Content-Type: application/json
+
+{
+  "name": "digital products"
+}
+
+###
+DELETE http://localhost:8005/api/v1/articles/tags/digital%20products/
+Accept: application/json
